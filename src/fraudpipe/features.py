@@ -62,7 +62,8 @@ def add_velocity_features(df: pd.DataFrame, key_col: str | None = None, time_col
         mean = np.where(c24 > 0, s24 / np.maximum(c24, 1), 0.0)
         var = np.where(c24 > 1, sq24 / np.maximum(c24, 1) - mean**2, 0.0)
         std = np.sqrt(np.maximum(var, 0.0))
-        new_cols["amount_z_24h"][p] = np.where(std > 0, (a - mean) / std, 0.0)
+        with np.errstate(divide="ignore", invalid="ignore"):
+            new_cols["amount_z_24h"][p] = np.where(std > 0, (a - mean) / std, 0.0)
     for k, v in new_cols.items():
         out[k] = v
     return out.sort_index()
