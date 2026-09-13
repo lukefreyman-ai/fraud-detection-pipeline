@@ -92,6 +92,7 @@ def main(argv=None) -> None:
         X.plot_importance(imp, out / "shap_importance.png")
         print("top SHAP features:", ", ".join(imp["feature"].head(8)))
     lgbm_key = next((k for k in fitted if k.startswith("lightgbm/") and k.split("/")[1] == table.iloc[0]["strategy"]), None) or best_key
+    (ROOT / "models").mkdir(exist_ok=True)
     joblib.dump(fitted[lgbm_key][0], ROOT / "models" / "best_model.pkl")
     scored = test[["Time", "Amount", "Class"] + [c for c in cols if c not in ("Time", "Amount", "Class")]].copy()
     scored["score"] = fitted[lgbm_key][1]
