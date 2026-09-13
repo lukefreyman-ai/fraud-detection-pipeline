@@ -1,0 +1,14 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+data/*.csv
+data/*.arff
+data/*.part
+data/*.parquet
+models/*.pkl
+results/scored_test.parquet
+results/review_decisions.csv
+.DS_Store
