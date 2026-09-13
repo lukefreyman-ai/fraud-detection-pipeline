@@ -18,7 +18,7 @@ plus `Time` (seconds since the first transaction) and `Amount`. Questions this n
 3. Is there a time-of-day pattern?
 4. Which raw features separate the classes most (candidate top features for the model)?
 5. Do the engineered velocity features carry signal?""")
-code("""import sys; sys.path.insert(0, "../src")
+code("""import sys, warnings; sys.path.insert(0, "../src"); warnings.filterwarnings("ignore")
 import numpy as np, pandas as pd, matplotlib.pyplot as plt
 from fraudpipe.data import load_creditcard
 from fraudpipe.features import build_features

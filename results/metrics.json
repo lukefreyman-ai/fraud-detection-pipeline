@@ -78,7 +78,7 @@
    "model": "logreg",
    "strategy": "none",
    "recall_at_p90": 0.4533333333333333,
-   "fit_seconds": 0.4,
+   "fit_seconds": 0.5,
    "val_auc_pr": 0.6603773964738215
   },
   {
@@ -102,7 +102,7 @@
    "model": "lightgbm",
    "strategy": "none",
    "recall_at_p90": 0.7066666666666667,
-   "fit_seconds": 2.6,
+   "fit_seconds": 2.7,
    "val_auc_pr": 0.7850056053716209,
    "extra_best_iteration": 124,
    "extra_scale_pos_weight": null
@@ -128,7 +128,7 @@
    "model": "logreg",
    "strategy": "class_weight",
    "recall_at_p90": 0.72,
-   "fit_seconds": 0.6,
+   "fit_seconds": 0.7,
    "val_auc_pr": 0.7817573633227889
   },
   {
@@ -152,7 +152,7 @@
    "model": "lightgbm",
    "strategy": "class_weight",
    "recall_at_p90": 0.72,
-   "fit_seconds": 2.2,
+   "fit_seconds": 2.3,
    "val_auc_pr": 0.7591453030703117,
    "extra_best_iteration": 57,
    "extra_scale_pos_weight": 473.6777777777778
@@ -178,7 +178,7 @@
    "model": "logreg",
    "strategy": "smote",
    "recall_at_p90": 0.6666666666666666,
-   "fit_seconds": 0.5,
+   "fit_seconds": 0.7,
    "val_auc_pr": 0.7652017018455142
   },
   {
@@ -208,5 +208,5 @@
    "extra_scale_pos_weight": null
   }
  ],
- "elapsed_seconds": 11.8
+ "elapsed_seconds": 12.6
 }

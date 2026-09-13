@@ -1,24 +1,16 @@
-/Users/lukefreyman/Desktop/fraud-detection-pipeline/.venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
-  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
-/Users/lukefreyman/Desktop/fraud-detection-pipeline/.venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
-  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
-/Users/lukefreyman/Desktop/fraud-detection-pipeline/.venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
-  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
-/Users/lukefreyman/Desktop/fraud-detection-pipeline/.venv/lib/python3.14/site-packages/shap/explainers/_tree.py:632: UserWarning: LightGBM binary classifier with TreeExplainer shap values output has changed to a list of ndarray
-  warnings.warn(
 rows=284,807 fraud=492 (0.173%)
 split: train=170,884 (360 fraud) val=56,961 (57) test=56,962 (75)
-  logreg/none            AUC-PR=0.719 AUC-ROC=0.963 thr=0.0172 P=0.28 R=0.84 alerts=222 cost=$3,475 (0.4s)
-  lightgbm/none          AUC-PR=0.792 AUC-ROC=0.987 thr=0.0097 P=0.39 R=0.81 alerts=155 cost=$3,166 (2.6s)
-  logreg/class_weight    AUC-PR=0.762 AUC-ROC=0.983 thr=0.9499 P=0.29 R=0.85 alerts=218 cost=$3,457 (0.6s)
-  lightgbm/class_weight  AUC-PR=0.756 AUC-ROC=0.938 thr=0.8124 P=0.39 R=0.77 alerts=149 cost=$3,628 (2.2s)
-  logreg/smote           AUC-PR=0.791 AUC-ROC=0.973 thr=0.1065 P=0.18 R=0.85 alerts=353 cost=$4,127 (0.5s)
+  logreg/none            AUC-PR=0.719 AUC-ROC=0.963 thr=0.0172 P=0.28 R=0.84 alerts=222 cost=$3,475 (0.5s)
+  lightgbm/none          AUC-PR=0.792 AUC-ROC=0.987 thr=0.0097 P=0.39 R=0.81 alerts=155 cost=$3,166 (2.7s)
+  logreg/class_weight    AUC-PR=0.762 AUC-ROC=0.983 thr=0.9499 P=0.29 R=0.85 alerts=218 cost=$3,457 (0.7s)
+  lightgbm/class_weight  AUC-PR=0.756 AUC-ROC=0.938 thr=0.8124 P=0.39 R=0.77 alerts=149 cost=$3,628 (2.3s)
+  logreg/smote           AUC-PR=0.791 AUC-ROC=0.973 thr=0.1065 P=0.18 R=0.85 alerts=353 cost=$4,127 (0.7s)
   lightgbm/smote         AUC-PR=0.798 AUC-ROC=0.984 thr=0.0721 P=0.22 R=0.83 alerts=279 cost=$3,768 (2.9s)
 
 best by expected cost on test: lightgbm/none (threshold 0.0097)
 top SHAP features: V14, V4, V12, V7, V20, V19, Amount, V3
 
-wrote /Users/lukefreyman/Desktop/fraud-detection-pipeline/results/results_table.md, metrics.json, plots; models/best_model.pkl; 155 flagged test transactions for the app
+wrote results/results_table.md, metrics.json, plots; models/best_model.pkl; 155 flagged test transactions for the app
 | model | strategy | auc_pr | auc_roc | threshold | precision | recall | f1 | alerts | alerts_per_10k | fraud_dollars_caught | fraud_dollars_missed | expected_cost |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | lightgbm | none | 0.792 | 0.987 | 0.0097 | 0.394 | 0.813 | 0.530 | 155 | 27.2 | $5,339 | $2,391 | $3,166 |

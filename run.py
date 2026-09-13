@@ -12,7 +12,11 @@ import argparse
 import json
 import sys
 import time
+import warnings
 from pathlib import Path
+
+warnings.filterwarnings("ignore", message=".*eval_set.*")            # LGBMDeprecationWarning about eval_set
+warnings.filterwarnings("ignore", category=UserWarning, module="shap")  # SHAP's LightGBM binary-classifier notice
 
 import joblib
 import numpy as np
@@ -98,7 +102,8 @@ def main(argv=None) -> None:
     scored["score"] = fitted[lgbm_key][1]
     scored["flagged"] = (scored["score"] >= fitted[lgbm_key][2]).astype(int)
     scored.to_parquet(out / "scored_test.parquet", index=False)
-    print(f"\nwrote {out}/results_table.md, metrics.json, plots; models/best_model.pkl; {int(scored.flagged.sum())} flagged test transactions for the app")
+    out_rel = out.relative_to(ROOT) if out.is_relative_to(ROOT) else out
+    print(f"\nwrote {out_rel}/results_table.md, metrics.json, plots; models/best_model.pkl; {int(scored.flagged.sum())} flagged test transactions for the app")
     print(R.to_markdown(table))
 
 
